@@ -1,0 +1,112 @@
+$main-theme-color: #2f88ff;
+
+@mixin kaisei-harunoumi($weight: 400) {
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: $weight;
+    font-style: normal;
+}
+
+@mixin textGradient($color: $main-theme-color) {
+    background: linear-gradient(to right, $color, #3b3b3b);
+    // Clip the background to the text
+    -webkit-background-clip: text;
+    background-clip: text;
+    // Set the fill color to transparent to allow the background gradient to show through
+    color: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.25) 1px 5px 5px;
+
+    #title {
+        @include textGradient();
+        @include kaisei-harunoumi($weight: 700);
+        font-size: 2rem;
+        border-bottom: black solid 0.2rem;
+        width: calc(30%);
+        text-align: center;
+        padding: 16px;
+    }
+
+    nav {
+        display: flex;
+        margin-right: 1rem;
+        button {
+            @include kaisei-harunoumi($weight: 700);
+            font-size: 2rem;
+            appearance: none;
+            background-color: transparent;
+            border: none;
+            color: #3b3b3b;
+            cursor: pointer;
+            outline: none;
+            padding: 16px 24px;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            width: 100%;
+        }
+
+        button:disabled {
+            pointer-events: none;
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #1a1a1a;
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            border-radius: 15px;
+        }
+
+        button:active {
+            box-shadow: none;
+        }
+    }
+}
+
+#content {
+    display: flex;
+    #leftPart {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-left: 5%;
+        padding-top: 3%;
+        padding-right: 0;
+        #logo_title {
+            @include kaisei-harunoumi();
+            font-size: 5rem;
+        }
+        #logo {
+            width: 30%;
+        }
+    }
+    #rightPart {
+        width: 50%;
+        display: flex;
+        align-self: center;
+        #slogan {
+            @include kaisei-harunoumi(700);
+            @include textGradient();
+            font-size: 3rem;
+            word-wrap: break-word;
+        }
+    }
+}
