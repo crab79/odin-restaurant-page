@@ -1,6 +1,7 @@
 console.log('test!');
 import "./style.scss";
 import logoSrc from "../img/crab.png";
+import { changeRightPart } from "./tab-about";
 
 // header
 const header = document.querySelector('header');
@@ -19,6 +20,10 @@ home.id = "home";
 home.textContent = "Home";
 menu.id = "menu";
 menu.textContent = "Menu";
+
+about.addEventListener('click',() => {
+    changeRightPart();
+})
 
 
 
@@ -42,4 +47,6 @@ content.appendChild(rightPart);
 leftPart.append(logoImg);
 leftPart.append(leftPart_title);
 rightPart.append(rightPart_slogan);
+
+
 

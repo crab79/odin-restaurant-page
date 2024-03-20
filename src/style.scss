@@ -27,12 +27,14 @@ body {
 }
 
 header {
-    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: fit-content;
+    background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.25) 1px 5px 5px;
+    position: fixed;
+    top: 0;
 
     #title {
         @include textGradient();
@@ -49,7 +51,7 @@ header {
         margin-right: 1rem;
         button {
             @include kaisei-harunoumi($weight: 700);
-            font-size: 2rem;
+            font-size: 1.5rem;
             appearance: none;
             background-color: transparent;
             border: none;
@@ -62,6 +64,8 @@ header {
             user-select: none;
             -webkit-user-select: none;
             width: 100%;
+            height: 90%;
+            align-self: center;
         }
 
         button:disabled {
@@ -83,6 +87,7 @@ header {
 
 #content {
     display: flex;
+    margin-top: 5rem;
     #leftPart {
         display: flex;
         flex-direction: column;
@@ -101,12 +106,25 @@ header {
     #rightPart {
         width: 50%;
         display: flex;
-        align-self: center;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        
         #slogan {
             @include kaisei-harunoumi(700);
             @include textGradient();
             font-size: 3rem;
             word-wrap: break-word;
+        }
+        img{
+            width: 40%;
+            align-self: center;
+            padding-right: 1rem;
+        }
+        p{
+            @include kaisei-harunoumi();
+            font-size: 1.5rem;
+            margin: 1rem;
         }
     }
 }
