@@ -1,8 +1,9 @@
 console.log('test!');
 import "./style.scss";
 import logoSrc from "../img/crab.png";
-import { tab_about } from "./tab-about";
+import {tab_about } from "./tab-about";
 import {tab_home} from "./tab-home";
+import {tab_menu} from "./tab-menu";
 // header
 const header = document.querySelector('header');
 const header_title = document.createElement('div');
@@ -27,6 +28,10 @@ about.addEventListener('click',() => {
 
 home.addEventListener('click',() => {
     tab_home();
+})
+
+menu.addEventListener('click',() => {
+    tab_menu();
 })
 
 // content
