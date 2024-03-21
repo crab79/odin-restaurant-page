@@ -109,19 +109,31 @@ header {
         flex-direction: column;
         align-content: center;
         justify-content: center;
-        
+
         #slogan {
             @include kaisei-harunoumi(700);
             @include textGradient();
             font-size: 3rem;
             word-wrap: break-word;
         }
+
+        .location{
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
         img{
-            width: 40%;
+            width: 30%;
             align-self: center;
             padding-right: 1rem;
         }
-        p{
+
+        h1{
+            @include kaisei-harunoumi();
+            font-size: 2rem;
+        }
+
+        p, li{
             @include kaisei-harunoumi();
             font-size: 1.5rem;
             margin: 1rem;

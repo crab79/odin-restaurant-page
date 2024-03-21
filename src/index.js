@@ -1,8 +1,8 @@
 console.log('test!');
 import "./style.scss";
 import logoSrc from "../img/crab.png";
-import { changeRightPart } from "./tab-about";
-
+import { tab_about } from "./tab-about";
+import {tab_home} from "./tab-home";
 // header
 const header = document.querySelector('header');
 const header_title = document.createElement('div');
@@ -22,10 +22,12 @@ menu.id = "menu";
 menu.textContent = "Menu";
 
 about.addEventListener('click',() => {
-    changeRightPart();
+    tab_about();
 })
 
-
+home.addEventListener('click',() => {
+    tab_home();
+})
 
 // content
 const content = document.getElementById('content');

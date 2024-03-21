@@ -1,5 +1,5 @@
 import foodSrc from "../img/food.png";
-const changeRightPart = () => {
+const tab_about = () => {
     rightPart.innerText = '';
     const foodImg = document.createElement('img');
     const description = document.createElement('p');
@@ -12,4 +12,4 @@ const changeRightPart = () => {
     rightPart.append(description2);
 };
 
-export {changeRightPart};
+export {tab_about};
